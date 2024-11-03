@@ -7,7 +7,7 @@ import java.util.List;
 public interface IUserService {
     User registerUser(User user) throws UserAlreadyExistException, InvalidUserException;
 
-    String authenticateUser(String userId, String password);
+    User authenticateUser(String userId, String password);
 
     void updateProfile(User user);
 

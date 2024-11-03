@@ -37,7 +37,7 @@ public class UserServiceTest {
     }
 
     @Test
-    public void testRegisterUser_Success() throws UserAlreadyExistException, InvalidUserException {
+    public void registerUser_Success() throws UserAlreadyExistException, InvalidUserException {
         // Setup: No existing user with the same email or username
         when(userRepository.findByEmailOrUserName(any(), any())).thenReturn(Collections.emptyList());
 
@@ -56,7 +56,7 @@ public class UserServiceTest {
     }
 
     @Test
-    public void testRegisterUser_UserAlreadyExists() {
+    public void registerUser_UserAlreadyExists() {
         // Setup: Mock that a user with the same email or username already exists
         when(userRepository.findByEmailOrUserName(any(), any())).thenReturn(List.of(user));
 
@@ -68,7 +68,7 @@ public class UserServiceTest {
     }
 
     @Test
-    public void testRegisterUser_InvalidUser_Missing_Email() {
+    public void registerUser_InvalidUser_Missing_Email() {
         // Setup: Set invalid fields in the user (e.g., missing email)
         user.setEmail(null);
 
@@ -81,7 +81,7 @@ public class UserServiceTest {
     }
 
     @Test
-    public void testRegisterUser_InvalidUser_Missing_Password() {
+    public void registerUser_InvalidUser_Missing_Password() {
         // Setup: Set invalid fields in the user (e.g., missing email)
         user.setPassword(null);
 
@@ -94,7 +94,7 @@ public class UserServiceTest {
     }
 
     @Test
-    public void testRegisterUser_InvalidUser_Missing_UserName() {
+    public void registerUser_InvalidUser_Missing_UserName() {
         // Setup: Set invalid fields in the user (e.g., missing email)
         user.setUserName(null);
 
@@ -107,7 +107,7 @@ public class UserServiceTest {
     }
 
     @Test
-    public void testRegisterUser_InvalidUser_Missing_FirstName() {
+    public void registerUser_InvalidUser_Missing_FirstName() {
         // Setup: Set invalid fields in the user (e.g., missing email)
         user.setFirstName(null);
 
@@ -120,7 +120,7 @@ public class UserServiceTest {
     }
 
     @Test
-    public void testRegisterUser_InvalidUser_Missing_LastName() {
+    public void registerUser_InvalidUser_Missing_LastName() {
         // Setup: Set invalid fields in the user (e.g., missing email)
         user.setLastName(null);
 
@@ -130,5 +130,14 @@ public class UserServiceTest {
         // Verify that findByEmailOrUserName and save were never called
         verify(userRepository, never()).findByEmailOrUserName(anyString(), anyString());
         verify(userRepository, never()).save(any(User.class));
+    }
+
+    //@Test TODO will be uncommented once we have authenticate method is implemented
+    public void authenticateUser_success() {
+        // Act
+        User user = userService.authenticateUser("username", "password");
+
+        // Assert
+        assertNotNull(user);
     }
 }

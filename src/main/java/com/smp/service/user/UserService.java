@@ -42,8 +42,8 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public String authenticateUser(String userId, String password) {
-        return "";
+    public User authenticateUser(String userId, String password) {
+        return null;
     }
 
     @Override
