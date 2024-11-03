@@ -1,5 +1,8 @@
 package com.smp.domain;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "user")
 public class User extends Domain {
     private String userName;
     private String firstName;

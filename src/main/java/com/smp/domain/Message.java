@@ -1,11 +1,14 @@
 package com.smp.domain;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "message")
 public class Message extends Domain {
     private String senderId;
     private String receiverId;
     private String content;
     private byte[] isPhoto;
-    private String status;
+    private String status; // "sent" or "deleted"
 
     public String getSenderId() {
         return senderId;

@@ -1,11 +1,12 @@
 package com.smp.domain;
 
-import java.util.Date;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+@Document(collection = "friend")
 public class Friend extends Domain {
     private String userId;
     private String friendId;
-    private String status;
+    private String status; // "friends" or "blocked"
 
     public String getUserId() {
         return userId;

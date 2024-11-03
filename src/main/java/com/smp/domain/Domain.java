@@ -1,19 +1,22 @@
 package com.smp.domain;
 
+import org.springframework.data.annotation.Id;
+
 import java.io.Serializable;
 import java.util.Date;
 
 public class Domain implements Serializable {
-    private String _id;
+    @Id
+    private String id;
     private Date createdAt;
     private Date updatedAt;
 
-    public String get_id() {
-        return _id;
+    public String getId() {
+        return id;
     }
 
-    public void set_id(String _id) {
-        this._id = _id;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public Date getCreatedAt() {
