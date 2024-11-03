@@ -1,0 +1,10 @@
+# All the DB scripts to create Collection (Table)
+
+# Create a collection named 'user'
+db.createCollection("user")
+
+#Create a collection named 'friend'
+db.createCollection("friend")
+
+# Create a collection named 'message'
+db.createCollection("message")

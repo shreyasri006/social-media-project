@@ -37,7 +37,7 @@ public class UserService implements IUserService {
         user.setCreatedAt(date);
         user.setUpdatedAt(date);
 
-        userRepository.save(user);
+        userRepository.insert(user);
         return user;
     }
 
