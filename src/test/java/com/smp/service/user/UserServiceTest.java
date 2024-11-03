@@ -132,12 +132,66 @@ public class UserServiceTest {
         verify(userRepository, never()).save(any(User.class));
     }
 
-    //@Test TODO will be uncommented once we have authenticate method is implemented
+    //@Test TODO will be uncommented once we have authenticate method implemented
     public void authenticateUser_success() {
         // Act
         User user = userService.authenticateUser("username", "password");
 
         // Assert
         assertNotNull(user);
+    }
+
+    //@Test TODO will be uncommented once we have authenticate method implemented(incorrect username or password)
+    public void authenticateUser_invalidUserNameOrPassword() {
+        // Act
+        // Assert
+    }
+
+    //@Test TODO will be uncommented once we have updateProfile method implemented
+    public void updateProfile_success() {
+        //Act
+        //Assert
+    }
+
+    //@Test TODO will be uncommented once we have updateProfile method implemented (cant use someone else email/username)
+    public void updateProfile_invalidUserProfile() {
+        //Act
+        //Assert
+    }
+
+    //@Test TODO will be uncommented once we have uploadProfileImage method implemented
+    public void uploadProfileImage_success() {
+        //Act
+        //Assert
+    }
+
+    //@Test TODO will be uncommented once we have uploadProfileImage method implemented(Profile picture not supported or too long)
+    public void uploadProfileImage_invalidProfileImage() {
+        //Act
+        //Assert
+    }
+
+    //@Test TODO will be uncommented once we have getUserByName method implemented
+    public void getUserByName_success() {
+        //Act
+        //Assert
+    }
+
+    //@Test TODO will be uncommented once we have getUserByName method implemented (username is not in database)
+    public void getUserByName_invalidUserName() {
+        //Act
+        //Assert
+    }
+
+    //@Test TODO will be uncommented once we have getUser method implemented
+    public void getUser_success() {
+        //Act
+        //Assert
+    }
+
+    //@Test TODO will be uncommented once we have getUser method implemented (user doesn't exist)
+    public void getUser_invalidUser() {
+        //Act
+        //Assert
     }
 }
